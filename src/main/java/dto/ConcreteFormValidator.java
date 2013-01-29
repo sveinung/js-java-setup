@@ -1,8 +1,8 @@
-package validation;
+package dto;
 
-import dto.FormDTO;
+import validation.FormValidator;
+import validation.Message;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ConcreteFormValidator extends FormValidator<FormDTO> {

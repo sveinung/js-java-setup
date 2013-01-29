@@ -1,8 +1,10 @@
-package validation;
+package dto;
 
-import dto.FormDTO;
 import org.junit.Before;
 import org.junit.Test;
+import validation.Message;
+import validation.MessageType;
+import validation.ResourceValidationException;
 
 import java.util.List;
 

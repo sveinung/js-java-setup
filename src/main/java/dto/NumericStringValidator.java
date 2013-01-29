@@ -1,4 +1,8 @@
-package validation;
+package dto;
+
+import validation.Message;
+import validation.MessageType;
+import validation.PrimitiveValidator;
 
 public class NumericStringValidator extends PrimitiveValidator<String> {
     @Override
