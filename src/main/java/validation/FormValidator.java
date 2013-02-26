@@ -9,7 +9,7 @@ public abstract class FormValidator<T> {
     public void validateAndThrow(T t) {
         List<Message> messages = validate(t);
         if (!messages.isEmpty()) {
-            throw new ResourceValidationException(messages);
+            throw new ValidationException(messages);
         }
     }
 

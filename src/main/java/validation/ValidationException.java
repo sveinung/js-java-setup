@@ -2,10 +2,10 @@ package validation;
 
 import java.util.List;
 
-public class ResourceValidationException extends RuntimeException {
+public class ValidationException extends RuntimeException {
     private List<Message> messages;
 
-    public ResourceValidationException(List<Message> messages) {
+    public ValidationException(List<Message> messages) {
         this.messages = messages;
     }
 
