@@ -16,4 +16,8 @@ public class Message {
     public String getKey() {
         return key;
     }
+
+    public static Message from(Message message, String field) {
+        return new Message(field, message.getKey());
+    }
 }

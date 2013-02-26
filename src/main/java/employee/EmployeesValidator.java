@@ -1,10 +1,7 @@
 package employee;
 
 import validation.FormValidator;
-import validation.Message;
-
-import java.util.ArrayList;
-import java.util.List;
+import validation.Messages;
 
 public class EmployeesValidator extends FormValidator<Employees> {
 
@@ -15,11 +12,13 @@ public class EmployeesValidator extends FormValidator<Employees> {
     }
 
     @Override
-    public List<Message> validate(Employees employees) {
-        List<Message> messages = new ArrayList<Message>();
+    public Messages validate(Employees employees) {
+        Messages messages = new Messages();
 
+        int index = 0;
         for (Employee employee : employees.getEmployees()) {
-            messages.addAll(employeeValidator.validate(employee));
+            messages.addAll(employeeValidator.validate(employee), "employees[" + index + "]");
+            index++;
         }
 
         return messages;

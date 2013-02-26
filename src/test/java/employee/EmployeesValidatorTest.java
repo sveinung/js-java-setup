@@ -35,6 +35,25 @@ public class EmployeesValidatorTest {
             List<Message> messages = e.getMessages();
 
             assertEquals(1, messages.size());
+            assertEquals("employees[1].name",
+                         messages.get(0).getField());
+        }
+    }
+
+    @Test
+    public void should_not_validate_multiple_funky_names() {
+        try {
+            validator.validateAndThrow(new Employees(asList(new Employee("$"), new Employee("$"))));
+
+            fail();
+        } catch (ValidationException e) {
+            List<Message> messages = e.getMessages();
+
+            assertEquals(2, messages.size());
+            assertEquals("employees[0].name",
+                         messages.get(0).getField());
+            assertEquals("employees[1].name",
+                         messages.get(1).getField());
         }
     }
 }
